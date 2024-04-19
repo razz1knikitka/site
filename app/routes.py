@@ -1,10 +1,13 @@
 import os
 
+# todo: remove useless imports
+
 from flask import request, session, make_response, abort, render_template, flash, redirect
 from app import app, db, mail
 from app.models import User
 from flask_mail import Message
 from werkzeug.utils import secure_filename
+
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -58,6 +61,7 @@ def login():
         return 'error: no user found', 422
 
 
+# todo: remove useless code
 @app.route('/add-role/<user_id>', methods=['POST'])
 def add_role_for_user(user_id):
     try:
@@ -93,6 +97,7 @@ def add_role_for_user(user_id):
             return str(ex), 500
 
 
+# todo: remove useless code
 @app.route('/add-permission/<role_id>', methods=['POST'])
 def add_permission_for_role(role_id):
     try:

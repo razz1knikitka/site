@@ -20,6 +20,7 @@ class User(db.Model):
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(100), nullable=False)
 
+    # todo: remove useless code
 #class City(db.Model):
 #    id = Column(db.Integer)
 #    img = Column(db.String)
