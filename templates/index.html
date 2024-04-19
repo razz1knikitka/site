@@ -101,73 +101,104 @@ Facebook: 		https://www.facebook.com/fh5co
     <div class="fh5co-listing">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-4 fh5co-item-wrap">
-                    <a class="fh5co-listing-item">
-                        <img src="{{url_for('static', filename='images/img-1.jpg')}}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
-                        <div class="fh5co-listing-copy">
-                            <h2>Paris</h2>
-                            <span class="icon">
-                                <i class="icon-chevron-right"></i>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-4 fh5co-item-wrap">
-                    <a class="fh5co-listing-item">
-                        <img src="{{url_for('static', filename='images/img-2.jpg')}}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
-                        <div class="fh5co-listing-copy">
-                            <h2>New York</h2>
-                            <span class="icon">
-                                <i class="icon-chevron-right"></i>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-4 fh5co-item-wrap">
-                    <a class="fh5co-listing-item">
-                        <img src="{{url_for('static', filename='images/img-3.jpg')}}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
-                        <div class="fh5co-listing-copy">
-                            <h2>London</h2>
-                            <span class="icon">
-                                <i class="icon-chevron-right"></i>
-                            </span>
-                        </div>
-                    </a>
-                </div>
+
+
+
+<div class="col-md-4 col-sm-4 fh5co-item-wrap">
+    <a href="http://127.0.0.1:5000/paris" class="fh5co-listing-item">
+        <img src="{{url_for('static', filename='images/img-1.jpg')}}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
+        <div class="fh5co-listing-copy">
+            <h2>Paris</h2>
+            <button class="custom-button">
+                Перейти
+                <i class="icon-chevron-right"></i>
+            </button>
+        </div>
+    </a>
+</div>
+
+                <style>
+    .custom-button {
+        background-color: rgba(169, 169, 169, 0.5);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .custom-button:hover {
+        background-color: rgba(169, 169, 169, 0.8);
+    }
+</style>
+
+<div class="col-md-4 col-sm-4 fh5co-item-wrap">
+    <a href="http://127.0.0.1:5000/newyork" class="fh5co-listing-item">
+        <img src="{{url_for('static', filename='images/img-2.jpg')}}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
+        <div class="fh5co-listing-copy">
+            <h2>New York</h2>
+            <button class="custom-button">
+                Перейти
+                <i class="icon-chevron-right"></i>
+            </button>
+        </div>
+    </a>
+</div>
+
+
+
+<div class="col-md-4 col-sm-4 fh5co-item-wrap">
+    <a href="http://127.0.0.1:5000/london" class="fh5co-listing-item">
+        <img src="{{url_for('static', filename='images/img-3.jpg')}}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
+        <div class="fh5co-listing-copy">
+            <h2>London</h2>
+            <button class="custom-button">
+                Перейти
+                <i class="icon-chevron-right"></i>
+            </button>
+        </div>
+    </a>
+</div>
+
                 <!-- END 3 row -->
 
                 <div class="col-md-4 col-sm-4 fh5co-item-wrap">
-                    <a class="fh5co-listing-item">
-                        <img src="{{url_for('static', filename='images/img-4.jpg')}}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
-                        <div class="fh5co-listing-copy">
-                            <h2>Amsterdam</h2>
-                            <span class="icon">
-                                <i class="icon-chevron-right"></i>
-                            </span>
-                        </div>
-                    </a>
+                    <a href="http://127.0.0.1:5000/amst" class="fh5co-listing-item">
+        <img src="{{url_for('static', filename='images/img-4.jpg')}}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
+        <div class="fh5co-listing-copy">
+            <h2>Amsterdam</h2>
+            <button class="custom-button">
+                Перейти
+                <i class="icon-chevron-right"></i>
+            </button>
+        </div>
+    </a>
                 </div>
                 <div class="col-md-4 col-sm-4 fh5co-item-wrap">
-                    <a class="fh5co-listing-item">
-                        <img src="{{url_for('static', filename='images/img-5.jpg')}}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
-                        <div class="fh5co-listing-copy">
-                            <h2>Australia</h2>
-                            <span class="icon">
-                                <i class="icon-chevron-right"></i>
-                            </span>
-                        </div>
-                    </a>
+                    <a href="http://127.0.0.1:5000/ast" class="fh5co-listing-item">
+        <img src="{{url_for('static', filename='images/img-5.jpg')}}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
+        <div class="fh5co-listing-copy">
+            <h2>Australia</h2>
+            <button class="custom-button">
+                Перейти
+                <i class="icon-chevron-right"></i>
+            </button>
+        </div>
+    </a>
                 </div>
                 <div class="col-md-4 col-sm-4 fh5co-item-wrap">
-                    <a class="fh5co-listing-item">
-                        <img src="{{url_for('static', filename='images/img-6.jpg')}}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
-                        <div class="fh5co-listing-copy">
-                            <h2>Japan</h2>
-                            <span class="icon">
-                                <i class="icon-chevron-right"></i>
-                            </span>
-                        </div>
-                    </a>
+                    <a href="http://127.0.0.1:5000/jup" class="fh5co-listing-item">
+        <img src="{{url_for('static', filename='images/img-6.jpg')}}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive">
+        <div class="fh5co-listing-copy">
+            <h2>Japan</h2>
+            <button class="custom-button">
+                Перейти
+                <i class="icon-chevron-right"></i>
+            </button>
+        </div>
+    </a>
                 </div>
                 <!-- END 3 row -->
 

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туристические места в Лондоне</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #666;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #999;
+        }
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .tourist-spot {
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s;
+            max-width: 300px;
+        }
+        .tourist-spot:hover {
+            transform: translateY(-10px);
+        }
+        .tourist-spot h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .tourist-spot p {
+            color: #666;
+            font-size: 16px;
+        }
+        .tourist-spot img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-top: 20px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #ccc;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Туристические места в Лондоне</h1>
+    </header>
+    <nav>
+        <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D1%83%D1%8D%D1%80">Лондонский Тауэр</a>
+        <a href="https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%BC%D1%83%D0%B7%D0%B5%D0%B9">Британский музей</a>
+        <a href="https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D0%B3-%D0%91%D0%B5%D0%BD">Биг Бен</a>
+    </nav>
+    <section>
+        <div id="london_tower" class="tourist-spot">
+            <h2>Лондонский Тауэр</h2>
+            <p>Лондонский Тауэр - историческая крепость, расположенная на берегу Темзы, служившая как крепость, королевский дворец и тюрьма.</p>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/c0/dc/f8/tower-of-london-white.jpg?w=1200&h=-1&s=1&cx=2515&cy=1577&chk=v1_1e1764bee68456e4ca27" alt="Лондонский Тауэр">
+        </div>
+        <div id="british_museum" class="tourist-spot">
+            <h2>Британский музей</h2>
+            <p>Британский музей - один из крупнейших музеев мира, коллекция которого включает артефакты из разных частей света и эпох.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/British_Museum_from_NE_2.JPG" alt="Британский музей">
+        </div>
+        <div id="big_ben" class="tourist-spot">
+            <h2>Биг Бен</h2>
+            <p>Биг Бен - символ Лондона и Соединенного Королевства, часы, расположенные в колокольне Вестминстерского дворца.</p>
+            <img src="https://tournavigator.pro/%D1%84%D0%BE%D1%82%D0%BE/other/1002/1013/1454100246.jpg" alt="Биг Бен">
+        </div>
+    </section>
+    <button class="back-button" onclick="goBack()">Назад</button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

@@ -1,9 +1,10 @@
-from flask import request, session, make_response, abort
-from app import app, db
-from app.models import User
-from flask_mail import  Message
+import os
 
-from app.__init__ import mail
+from flask import request, session, make_response, abort, render_template, flash, redirect
+from app import app, db, mail
+from app.models import User
+from flask_mail import Message
+from werkzeug.utils import secure_filename
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -24,6 +25,14 @@ def register():
         db.session.add(user)
         db.session.commit()
 
+        msg = Message(
+            subject='Registration letter',
+            sender='noreply@employer.com',
+            recipients=[email]
+        )
+        msg.html = render_template('template_letter.html', content=render_template('register_letter.html'))
+        mail.send(msg)
+
         return make_response(user.to_json())
 
 
@@ -41,21 +50,12 @@ def login():
 
         if user and user.is_password_correct(password):
             session['user_id'] = user.id
+
+            # TODO: Add validation that user turned on/has 2FA.
+
             return make_response(user.to_json())
 
         return 'error: no user found', 422
-
-
-
-@app.route('/mail', methods=['GET'])
-def mail_1():
-    msg = Message(
-        subject='Registration letter',
-        sender='noreply@employer.com',
-        recipients=['wfe@wef.wef']
-    )
-    msg.html = 'wef'
-    mail.send(msg)
 
 
 @app.route('/add-role/<user_id>', methods=['POST'])
@@ -91,3 +91,37 @@ def add_role_for_user(user_id):
             return str(ex), 404
         else:
             return str(ex), 500
+
+
+@app.route('/add-permission/<role_id>', methods=['POST'])
+def add_permission_for_role(role_id):
+    try:
+        if request.method == 'POST':
+            if session.get('user_id'):
+                current_user = User.query.filter_by(id=session.get('user_id')).first()
+
+                if current_user.is_admin():
+                    data = request.get_json()
+
+                    if not data:
+                        return 'Bad Request', 400
+
+                    role_id = data.get('permission_id')
+
+                    # todo: add BL(business-logic) to create new Permission
+                    # todo: return new Permission that was created
+                else:
+                    abort(404)
+
+            else:
+                return 'User is not authenticated', 401
+
+    except Exception as ex:
+        if True:
+            pass
+            # todo: add error/exception validation
+        elif str(ex) == '404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.':
+            return str(ex), 404
+        else:
+            return str(ex), 500
+
