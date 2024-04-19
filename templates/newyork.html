@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туристические места в Нью-Йорке</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://via.placeholder.com/1500x800');
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s;
+        }
+        header {
+            background-color: rgba(51, 51, 51, 0.7);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            text-shadow: 2px 2px 4px #000;
+        }
+        nav {
+            background-color: rgba(68, 68, 68, 0.7);
+            padding: 10px;
+            text-align: center;
+            border-bottom: 2px solid #222;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #666;
+        }
+        section {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .tourist-spot {
+            margin: 20px;
+            padding: 20px;
+            border: 5px solid rgba(51, 51, 51, 0.7);
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s;
+            max-width: 300px;
+        }
+        .tourist-spot:hover {
+            transform: translateY(-10px);
+        }
+        .tourist-spot h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .tourist-spot p {
+            color: #666;
+            font-size: 16px;
+        }
+        .tourist-spot img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-top: 20px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Туристические места в Нью-Йорке</h1>
+    </header>
+    <nav>
+        <a href="https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D1%82%D1%83%D1%8F_%D0%A1%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D1%8B#:~:text=Statue%20of%20Liberty%2C%20%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5,%D0%BE%D1%82%20%D1%8E%D0%B6%D0%BD%D0%BE%D0%B9%20%D0%BE%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D1%8B%20%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%20%D0%9C%D0%B0%D0%BD%D1%85%D1%8D%D1%82%D1%82%D0%B5%D0%BD.&text=40%C2%B041%E2%80%B221%E2%80%B3%20%D1%81.">Статуя Свободы</a>
+        <a href="https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%BD%D1%82%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BF%D0%B0%D1%80%D0%BA_(%D0%9D%D1%8C%D1%8E-%D0%99%D0%BE%D1%80%D0%BA)">Центральный парк</a>
+        <a href="https://ru.wikipedia.org/wiki/%D0%AD%D0%BC%D0%BF%D0%B0%D0%B9%D1%80-%D1%81%D1%82%D0%B5%D0%B9%D1%82-%D0%B1%D0%B8%D0%BB%D0%B4%D0%B8%D0%BD%D0%B3">Эмпайр-стейт-билдинг</a>
+
+    </nav>
+    <section>
+        <div id="statue-of-liberty" class="tourist-spot">
+            <h2>Статуя Свободы</h2>
+            <p>Статуя Свободы — исторический памятник в Нью-Йорке, символизирующий свободу и демократию. Она была подарена США французскими людьми в 1886 году.</p>
+            <img src="{{url_for('static', filename='images/stat.jpg')}}" alt="Статуя Свободы">
+        </div>
+        <div id="central-park" class="tourist-spot">
+            <h2>Центральный парк</h2>
+            <p>Центральный парк — крупнейший парк в Нью-Йорке, являющийся популярным местом отдыха для жителей и туристов.</p>
+            <img src="{{url_for('static', filename='images/park.jpg')}}" alt="Центральный парк">
+        </div>
+        <div id="empire-state-building" class="tourist-spot">
+            <h2>Эмпайр-стейт-билдинг</h2>
+            <p>Эмпайр-стейт-билдинг — одна из самых известных достопримечательностей Нью-Йорка, символ города и архитектурное чудо.</p>
+            <img src="{{url_for('static', filename='images/state.jpg')}}" alt="Эмпайр-стейт-билдинг">
+        </div>
+    </section>
+    <button class="back-button" onclick="goBack()">Назад</button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
+
+
